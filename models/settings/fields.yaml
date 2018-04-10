@@ -16,6 +16,7 @@ tabs:
             default: true
             tab: 'janvince.smallgallery::lang.common.tabs.fields'
             options:
+                parent_gallery: 'janvince.smallgallery::lang.common.columns.parent_gallery'
                 category: 'janvince.smallgallery::lang.common.columns.category'
                 preview_image: 'janvince.smallgallery::lang.common.columns.preview_image'
                 preview_image_media: 'janvince.smallgallery::lang.common.columns.preview_image_media'

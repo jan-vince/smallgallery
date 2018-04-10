@@ -58,6 +58,7 @@
             'created_at' => 'Vytvořeno',
             'updated_at' => 'Aktualizováno',
             'sort_order' => 'Vlastní pořadí',
+            'parent_gallery' => 'Parent gallery',
         ],
 
         'fields' => [
