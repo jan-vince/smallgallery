@@ -34,7 +34,7 @@ class GalleryDetail extends ComponentBase
 
         return [
             'gallerySlug'   => [
-                'title'       => 'janvince.smallgallery::lang.components.gallery.properties.galleryslug',
+                'title'       => 'janvince.smallgallery::lang.components.gallery.properties.gallery_slug',
                 'description' => 'janvince.smallgallery::lang.components.gallery.properties.gallery_slug_description',
                 'type'        => 'string',
                 'default'     => '{{ :slug }}',
