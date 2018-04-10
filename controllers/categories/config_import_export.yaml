@@ -1,0 +1,18 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: janvince.smallgallery::lang.common.import
+    modelClass: JanVince\SmallGallery\Models\CategoryImport
+    list: $/janvince/smallgallery/models/category/columns.yaml
+    form: $/janvince/smallgallery/models/categoryimport/fields.yaml
+    redirect: /janvince/smallgallery/categories
+    permissions: janvince.smallgallery.access_categories
+
+export:
+    title: janvince.smallgallery::lang.common.export
+    modelClass: JanVince\SmallGallery\Models\CategoryExport
+    list: $/janvince/smallgallery/models/category/columns.yaml
+    redirect: /janvince/smallgallery/categories
+    permissions: janvince.smallgallery.access_categories

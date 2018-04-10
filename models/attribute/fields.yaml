@@ -1,0 +1,35 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: janvince.smallgallery::lang.common.columns.name
+        span: left
+        required: true
+        type: text
+        attributes:
+            autofocus: ''        
+
+    slug:
+        label: janvince.smallgallery::lang.common.columns.slug
+        span: right
+        required: true
+        type: text
+        preset: name
+
+    # section:
+    #     type: section
+
+    value_type:
+        label: janvince.smallgallery::lang.attributes.columns.value_type
+        commentAbove: janvince.smallgallery::lang.attributes.columns.value_type_comment
+        span: left
+        required: true
+        type: dropdown
+        options:
+            string: janvince.smallgallery::lang.attributes.columns.value_string
+            text: janvince.smallgallery::lang.attributes.columns.value_text
+            number: janvince.smallgallery::lang.attributes.columns.value_number
+            switch: janvince.smallgallery::lang.attributes.columns.value_switch

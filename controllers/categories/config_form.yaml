@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: janvince.smallgallery::lang.categories.category
+form: ~/plugins/janvince/smallgallery/models/category/fields.yaml
+modelClass: JanVince\SmallGallery\Models\Category
+defaultRedirect: janvince/smallgallery/categories
+
+create:
+    redirect: janvince/smallgallery/categories/update/:id
+    redirectClose: janvince/smallgallery/categories
+
+update:
+    redirect: janvince/smallgallery/categories
+    redirectClose: janvince/smallgallery/categories

@@ -1,0 +1,270 @@
+fields:
+
+    id:
+        cssClass: hidden
+        readOnly: true
+        disabled: true
+
+    name:
+        label: 'janvince.smallgallery::lang.common.columns.name'
+        span: left
+        type: text
+        required: true
+        attributes:
+            autofocus: ''
+
+    slug:
+        label: 'janvince.smallgallery::lang.common.columns.slug'
+        span: right
+        required: true
+        type: text
+        preset:
+            field: name
+            type: slug
+
+tabs:
+    fields:
+
+        category:
+            label: 'janvince.smallgallery::lang.common.columns.category'
+            # comment: 'janvince.smallgallery::lang.common.columns.category_comment'
+            # commentHtml: true
+            type: relation
+            nameFrom: name
+            span: left
+            emptyOption: 'janvince.smallgallery::lang.common.fields.empty_option'
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        preview_image:
+            label: 'janvince.smallgallery::lang.common.columns.preview_image'
+            type: fileupload
+            mode: image
+            span: right
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        preview_image_media:
+            label: 'janvince.smallgallery::lang.common.columns.preview_image_media'
+            type: mediafinder
+            mode: image
+            span: right
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        description:
+            type: textarea
+            size: large
+            span: left
+            label: 'janvince.smallgallery::lang.common.columns.description'
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        date:
+            label: 'janvince.smallgallery::lang.common.columns.date'
+            type: datepicker
+            span: left
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        url:
+            type: text
+            span: left
+            label: 'janvince.smallgallery::lang.common.columns.url'
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        active:
+            label: 'janvince.smallgallery::lang.common.columns.active'
+            span: left
+            type: checkbox
+            default: true
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        favourite:
+            label: 'janvince.smallgallery::lang.common.columns.favourite'
+            span: left
+            type: checkbox
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        content:
+            type: richeditor
+            size: giant
+            span: full
+            label: 'janvince.smallgallery::lang.common.columns.content'
+            tab: 'janvince.smallgallery::lang.common.tabs.content'
+
+        images:
+            label: 'janvince.smallgallery::lang.common.columns.images'
+            type: fileupload
+            mode: image
+            span: full
+            tab: 'janvince.smallgallery::lang.common.tabs.images'
+
+        images_media:
+            type: repeater
+            prompt: 'janvince.smallgallery::lang.common.columns.repeater_prompt'
+            tab: 'janvince.smallgallery::lang.common.tabs.images'
+            form:
+                fields:
+                    image_title:
+                        label: 'janvince.smallgallery::lang.records.images_media.title'
+                        type: text
+                        span: left
+                    image:
+                        label: 'janvince.smallgallery::lang.records.images_media.image'
+                        type: mediafinder
+                        mode: image
+                        span: right
+                    image_description:
+                        label: 'janvince.smallgallery::lang.records.images_media.description'
+                        type: textarea
+                        size: medium
+                        span: left
+                    image_section:
+                        type: section
+
+
+        tags:
+            # label: 'janvince.smallgallery::lang.tags.tabs.tags'
+            type: relation
+            tab: 'janvince.smallgallery::lang.common.tabs.tags'
+            trigger:
+                action: hide
+                field: id
+                condition: value[]
+
+        attributes:
+            # label: 'janvince.smallgallery::lang.attributes.tabs.attributes'
+            type: partial
+            path: $/janvince/smallgallery/controllers/relations/attributes.htm
+            tab: 'janvince.smallgallery::lang.common.tabs.attributes'
+            trigger:
+                action: hide
+                field: id
+                condition: value[]
+
+
+        files:
+            # label: 'janvince.smallgallery::lang.records.files'
+            type: fileupload
+            mode: file
+            span: full
+            tab: 'janvince.smallgallery::lang.common.tabs.attachments'
+
+        categories:
+            # label: 'janvince.smallgallery::lang.categories.tabs.secondary_categories'
+            # commentAbove: 'janvince.smallgallery::lang.categories.tabs.secondary_categories_comment'
+            type: relation
+            nameFrom: name
+            span: full
+            tab: 'janvince.smallgallery::lang.common.tabs.secondary_categories'
+
+        repeater:
+            type: repeater
+            prompt: 'janvince.smallgallery::lang.common.columns.repeater_prompt'
+            tab: 'janvince.smallgallery::lang.common.tabs.notes'
+            trigger:
+                action: hide
+                field: id
+                condition: value[]
+            form:
+                fields:
+                    repeater_value1:
+                        label: 'janvince.smallgallery::lang.records.repeater.value1'
+                        type: text
+                        span: left
+                    repeater_value2:
+                        label: 'janvince.smallgallery::lang.records.repeater.value2'
+                        type: text
+                        span: right
+                    repeater_value3:
+                        label: 'janvince.smallgallery::lang.records.repeater.value3'
+                        type: text
+                        span: left
+                    repeater_value4:
+                        label: 'janvince.smallgallery::lang.records.repeater.value4'
+                        type: text
+                        span: right
+                    repeater_text:
+                        label: 'janvince.smallgallery::lang.records.repeater.text'
+                        type: richeditor
+                        span: full
+
+        testimonials:
+            type: repeater
+            prompt: 'janvince.smallgallery::lang.common.columns.testimonials_prompt'
+            tab: 'janvince.smallgallery::lang.common.tabs.testimonials'
+            trigger:
+                action: hide
+                field: id
+                condition: value[]
+            form:
+                fields:
+                    testimonial_title:
+                        label: 'janvince.smallgallery::lang.records.testimonials.title'
+                        type: text
+                        span: left
+                    testimonial_image:
+                        label: 'janvince.smallgallery::lang.records.testimonials.image'
+                        type: mediafinder
+                        mode: image
+                        span: right
+                        imageHeight: 260
+                        imageWidth: 260
+                    testimonial_author:
+                        label: 'janvince.smallgallery::lang.records.testimonials.author'
+                        type: text
+                        span: left
+                    testimonial_date:
+                        label: 'janvince.smallgallery::lang.records.testimonials.date'
+                        type: datepicker
+                        span: left
+                    testimonial_content:
+                        label: 'janvince.smallgallery::lang.records.testimonials.content'
+                        type: richeditor
+                        span: left
+                        size: huge
+
+        content_blocks:
+            type: repeater
+            prompt: 'janvince.smallgallery::lang.common.columns.repeater_prompt'
+            tab: 'janvince.smallgallery::lang.common.tabs.content_blocks'
+            trigger:
+                action: hide
+                field: id
+                condition: value[]
+            form:
+                fields:
+                    content_block_title:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.title'
+                        type: text
+                        span: left
+                    content_block_preview_image:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.preview_image'
+                        type: mediafinder
+                        span: right
+                        mode: image
+                    content_block_subtitle:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.subtitle'
+                        type: text
+                        span: left
+                    content_block_code:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.code'
+                        type: text
+                        span: left
+                    content_block_content:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.content'
+                        type: richeditor
+                        span: left
+                        size: giant
+                    content_block_description:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.description'
+                        type: richeditor
+                        span: right
+                    content_block_disable:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.disable'
+                        type: checkbox
+                        span: right
+                        default: false
+                    content_block_favourite:
+                        label: 'janvince.smallgallery::lang.records.content_blocks.favourite'
+                        type: checkbox
+                        span: right
+                        default: false
+                    content_block_section_content:
+                        type: section

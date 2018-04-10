@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: janvince.smallgallery::lang.attributes.attribute
+form: ~/plugins/janvince/smallgallery/models/attribute/fields.yaml
+modelClass: JanVince\SmallGallery\Models\Attribute
+defaultRedirect: janvince/smallgallery/attributes
+
+create:
+    redirect: janvince/smallgallery/attributes/update/:id
+    redirectClose: janvince/smallgallery/attributes
+
+update:
+    redirect: janvince/smallgallery/attributes
+    redirectClose: janvince/smallgallery/attributes

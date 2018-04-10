@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: janvince.smallgallery::lang.tags.tag
+form: ~/plugins/janvince/smallgallery/models/tag/fields.yaml
+modelClass: JanVince\SmallGallery\Models\Tag
+defaultRedirect: janvince/smallgallery/tags
+
+create:
+    redirect: janvince/smallgallery/tags/update/:id
+    redirectClose: janvince/smallgallery/tags
+
+update:
+    redirect: janvince/smallgallery/tags
+    redirectClose: janvince/smallgallery/tags

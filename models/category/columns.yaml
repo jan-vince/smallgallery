@@ -1,0 +1,59 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: janvince.smallgallery::lang.common.columns.id
+        searchable: true
+        invisible: true
+
+    preview_image:
+        label: 'janvince.smallgallery::lang.common.columns.preview_image'
+        type: record_image_preview
+        width: 30px
+        cssClass: text-center
+        invisible: true
+
+    name:
+        label: janvince.smallgallery::lang.common.columns.name
+        searchable: true
+        type: strong
+
+    slug:
+        label: janvince.smallgallery::lang.common.columns.slug
+        searchable: true
+
+    active:
+        label: 'janvince.smallgallery::lang.common.columns.active'
+        type: switch_extended
+        cssClass: text-center
+        sortable: true
+        width: 60px
+
+    parent:
+        label: janvince.smallgallery::lang.categories.columns.parent
+        type: relation
+        valueFrom: name
+        invisible: true
+
+    description:
+        label: janvince.smallgallery::lang.common.columns.description
+        type: text
+        invisible: true
+
+    content:
+        label: janvince.smallgallery::lang.common.columns.content
+        type: text_preview
+        invisible: true
+
+    created_at:
+        label: janvince.smallgallery::lang.common.columns.created_at
+        type: datetime
+        invisible: true
+
+    updated_at:
+        label: janvince.smallgallery::lang.common.columns.updated_at
+        type: datetime
+        invisible: true

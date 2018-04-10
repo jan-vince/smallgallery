@@ -1,0 +1,51 @@
+fields:
+    main_section:
+        type: section
+        label: 'janvince.smallgallery::lang.settings.main_section'
+        comment: 'janvince.smallgallery::lang.settings.main_section_comment'
+
+tabs:
+    fields:
+
+        allowed_fields:
+            label: 'janvince.smallgallery::lang.galleries.columns.allowed_fields'
+            comment: 'janvince.smallgallery::lang.galleries.columns.allowed_fields_comment'
+            commentHtml: true
+            span: left
+            type: checkboxlist
+            default: true
+            tab: 'janvince.smallgallery::lang.common.tabs.fields'
+            options:
+                category: 'janvince.smallgallery::lang.common.columns.category'
+                preview_image: 'janvince.smallgallery::lang.common.columns.preview_image'
+                preview_image_media: 'janvince.smallgallery::lang.common.columns.preview_image_media'
+                description: 'janvince.smallgallery::lang.common.columns.description'
+                date: 'janvince.smallgallery::lang.common.columns.date'
+                url: 'janvince.smallgallery::lang.common.columns.url'
+                active: 'janvince.smallgallery::lang.common.columns.active'
+                favourite: 'janvince.smallgallery::lang.common.columns.favourite'
+                content: 'janvince.smallgallery::lang.common.columns.content'
+                images: 'janvince.smallgallery::lang.common.columns.images'
+                images_media: 'janvince.smallgallery::lang.common.columns.images_media'
+                tags: 'janvince.smallgallery::lang.common.columns.tags'
+                attributes: 'janvince.smallgallery::lang.common.columns.attributes'
+                files: 'janvince.smallgallery::lang.common.columns.files'
+                categories: 'janvince.smallgallery::lang.common.columns.categories'
+                repeater: 'janvince.smallgallery::lang.common.columns.repeater'
+                testimonials: 'janvince.smallgallery::lang.common.columns.testimonials'
+                content_blocks: 'janvince.smallgallery::lang.common.tabs.content_blocks'
+
+
+        galleries_list_preview_width:
+            label: 'janvince.smallgallery::lang.settings.fields.preview_width'
+            span: left
+            type: number
+            default: 50
+            tab: 'janvince.smallgallery::lang.settings.tabs.lists'
+
+        galleries_list_preview_height:
+            label: 'janvince.smallgallery::lang.settings.fields.preview_height'
+            span: left
+            type: number
+            default: 50
+            tab: 'janvince.smallgallery::lang.settings.tabs.lists'

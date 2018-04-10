@@ -1,0 +1,79 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('janvince/smallgallery/galleries/index') ?>"><?= e(trans('janvince.smallgallery::lang.galleries.menu_label')) ?></a></li>
+        <li><?= e(trans('janvince.smallgallery::lang.common.edit')) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-request-data="redirect:0"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                    class="btn btn-primary">
+                    <?= e(trans('backend::lang.form.save')) ?>
+                </button>
+                <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-request-redirect="<?= Backend::url('janvince/smallgallery/galleries/index'); ?>"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                    class="btn btn-default">
+                    <?= e(trans('backend::lang.form.save_and_close')) ?>
+                </button>
+                <button
+                    type="button"
+                    data-request="onSaveNew"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+alt+enter, cmd+alt+enter"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                    data-request-redirect="<?= Backend::url('janvince/smallgallery/galleries/create') ?>"
+                    class="btn btn-default">
+                    <?= e(trans('janvince.smallgallery::lang.common.buttons.update_and_new')) ?>
+                </button>
+
+                <button
+                    type="button"
+                    data-request="onDeleteAttachedImages"
+                    data-request-redirect="<?= Backend::url('janvince/smallgallery/galleries/update', ['id' => $this->params[0]]) ?>"
+                    data-request-data="redirect:1"
+                    data-request-confirm="<?= e(trans('janvince.smallgallery::lang.forms.delete_attached_images_confirm')) ?>"
+                    data-load-indicator="<?= e(trans('janvince.smallgallery::lang.forms.deleting_attached_images')) ?>"
+                    data-request-success="console.log(data)"
+                    class="btn btn-danger">
+                    <?= e(trans('janvince.smallgallery::lang.forms.delete_attached_images')) ?>
+                </button>
+
+                <button
+                    type="button"
+                    class="oc-icon-trash-o btn-icon danger pull-right"
+                    data-request="onDelete"
+                    data-load-indicator="<?= e(trans('backend::lang.form.deleting')) ?>"
+                    data-request-confirm="<?= e(trans('backend::lang.form.confirm_delete')) ?>">
+                </button>
+
+                <span class="btn-text">
+                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('janvince/smallgallery/galleries/index') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
+                </span>
+
+            </div>
+        </div>
+    <?= Form::close() ?>
+
+<?php else: ?>
+    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+    <p><a href="<?= Backend::url('janvince/smallgallery/galleries') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+<?php endif ?>

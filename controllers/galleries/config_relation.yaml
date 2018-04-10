@@ -1,0 +1,40 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+categories:
+    label: janvince.smallgallery::lang.categories.menu_label
+    manage:
+        form: $/janvince/smallgallery/models/category/fields.yaml
+        list: $/janvince/smallgallery/models/category/columns.yaml
+        showSearch: true
+    view:
+        list: $/janvince/smallgallery/models/category/columns.yaml
+        toolbarButtons: create|add|remove
+        showSearch: true
+
+attributes:
+    label: janvince.smallgallery::lang.attributes.menu_label
+    manage:
+        form: $/janvince/smallgallery/models/attribute/fields.yaml
+        list: $/janvince/smallgallery/models/attribute/columns.yaml
+        showSearch: true
+    view:
+        list: $/janvince/smallgallery/models/attribute/columns_relation.yaml
+        toolbarButtons: add|remove
+        showSearch: true
+    pivot:
+        form: $/janvince/smallgallery/models/attribute/fields_relation.yaml
+
+galleries_attributes:
+    label: janvince.smallgallery::lang.attributes.menu_label
+    manage:
+        form: $/janvince/smallgallery/models/attribute/fields.yaml
+        list: $/janvince/smallgallery/models/attribute/columns.yaml
+        showSearch: true
+    view:
+        list: $/janvince/smallgallery/models/attribute/columns_relation.yaml
+        toolbarButtons: add|remove
+        showSearch: true
+    pivot:
+        form: $/janvince/smallgallery/models/attribute/fields_relation.yaml

@@ -1,0 +1,11 @@
+name: janvince.smallgallery::lang.galleries.menu_label
+modelClass: JanVince\SmallGallery\Models\Gallery
+form: $/janvince/smallgallery/models/gallery/fields.yaml
+defaultRedirect: janvince/smallgallery/galleries/index
+create:
+    redirect: 'janvince/smallgallery/galleries/update/:id'
+    redirectClose: janvince/smallgallery/galleries/index
+update:
+    redirect: janvince/smallgallery/galleries/index
+    redirectClose: janvince/smallgallery/galleries/index
+preview: {  }

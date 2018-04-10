@@ -1,0 +1,17 @@
+<ul class="categories-box {{ cssClass }}">
+
+    {% for category in __SELF__.items %}
+
+    <li {% if category.slug == __SELF__.property('categorySlug') %}class="active"{% endif %}>
+
+        <a href="{{ 'moje-prace'|page({'category':category.slug}) }}">{{ category.name }}</a>
+
+        {% if category.records|length %}
+            {# All category records - not limited to a specific list ! #}
+            <span class="badge">{{ category.records|length }}</span>
+        {% endif %}
+
+    </li>
+    {% endfor %}
+
+</ul>
