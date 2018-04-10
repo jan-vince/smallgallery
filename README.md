@@ -75,9 +75,9 @@ Or there are functions to get a specific attribute (or attribute's value) by slu
 
 You can add a Galleries component to a page, layout or partial.
 
-#### Record detail
+#### Gallery detail
 
-You can add a gallery detail to yout page, layout or partial.
+You can add a gallery detail to your page, layout or partial.
 
 
 
