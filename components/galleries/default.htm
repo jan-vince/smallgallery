@@ -1,21 +1,3 @@
-{% for record in __SELF__.items %}
+<h1>Galleries</h1>
 
-    <div class="record-box {{ cssClass }}">
-
-        {% if record.preview_image %}
-            <img alt="{{ record.name }}" src="{{ record.preview_image.getPath }}" />
-        {% endif %}
-
-        {% if record.preview_image_media %}
-            <img alt="{{ record.name }}" src="{{ record.preview_image_media|media }}" />
-        {% endif %}
-
-        <h3>
-            <a href="{{ detailPageSlug|page( { (detailPageParam): record.slug } ) }}">
-                {{ record.name }}
-            </a>
-        </h3>
-
-    </div>
-
-{% endfor %}
+{% partial "@galleries-list"  records = __SELF__.items %}

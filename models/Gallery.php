@@ -94,7 +94,12 @@ class Gallery extends Model
         'category' => [
             'JanVince\SmallGallery\Models\Category',
         ],
-
+		'parent_gallery' => [
+			'JanVince\SmallGallery\Models\Gallery',
+            'table' => 'janvince_smallgallery_galleries',
+			'key' => 'parent_id',
+			'otherKey' => 'id'
+		]
     ];
 
     public $attachOne = [
@@ -174,5 +179,25 @@ class Gallery extends Model
 
     }
 
+    /**
+    *    FILTERS
+    */
+    public function filterFields($fields, $context = NULL) {
 
+        $allowed_fields = Settings::get('allowed_fields');
+
+        $protected_fields = [
+            'id',
+            'name',
+            'slug',
+        ];
+
+        foreach( $fields as $fieldKey => $field ) {
+
+            if( ( empty($allowed_fields) && !in_array($fieldKey, $protected_fields) ) or
+                ( !in_array($fieldKey, $protected_fields) && !in_array($fieldKey, $allowed_fields) ) ) {
+                $fields->{$fieldKey}->hidden = true;
+            }
+        }
+    }
 }

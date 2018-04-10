@@ -1,0 +1,13 @@
+<div class="images-list">
+
+    {% for image in images %}
+
+        {% if image.getPath %}
+            <a href="{{ image.getPath() }}">
+                <div class="thumbnail" style="width: 200px; height: 200px; display: inline-block; border-radius: 10px; background: transparent url('{{ image.getThumb(200,200) }}') center center no-repeat; background-size: cover; " alt="{{ image.title }}"></div>
+            </a>
+        {% endif %}
+
+    {% endfor %}
+
+</div>

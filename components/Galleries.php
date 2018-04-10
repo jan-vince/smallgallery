@@ -10,7 +10,7 @@ use JanVince\SmallGallery\Models\Category;
 use JanVince\SmallGallery\Models\Gallery;
 use JanVince\SmallGallery\Models\Settings;
 
-class Records extends ComponentBase
+class Galleries extends ComponentBase
 {
 
     public function componentDetails()
@@ -26,68 +26,68 @@ class Records extends ComponentBase
 
         return [
             'categorySlug'    => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.category',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.category_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.category',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.category_description',
                 'type'        => 'string',
                 'default'     => '{{ :category }}',
             ],
             'tagSlug'    => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.tag',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.tag_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.tag',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.tag_description',
                 'type'        => 'string',
                 'default'     => '{{ :tag }}',
             ],
             'activeOnly'      => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.active_only',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.active_only_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.active_only',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.active_only_description',
                 'type'        => 'checkbox',
                 'default'     => true,
             ],
             'favouriteOnly'      => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.favourite_only',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.favourite_only_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.favourite_only',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.favourite_only_description',
                 'type'        => 'checkbox',
                 'default'     => false,
             ],
             'allowLimit'   => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.allow_limit',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.allow_limit_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.allow_limit',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.allow_limit_description',
                 'type'        => 'checkbox',
                 'default'     => 'false',
-                'group'       => 'janvince.smallgallery::lang.components.records.properties.groups.limit',
+                'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.limit',
             ],
             'limit'   => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.limit',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.limit_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.limit',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.limit_description',
                 'type'        => 'string',
                 'default'     => 10,
-                'group'       => 'janvince.smallgallery::lang.components.records.properties.groups.limit',
+                'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.limit',
             ],
             'detailPageSlug'   => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.detail_page_slug',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.detail_page_slug_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.detail_page_slug',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.detail_page_slug_description',
                 'type'        => 'dropdown',
-                'default'     => 'records/detail',
-                'group'       => 'janvince.smallgallery::lang.components.records.properties.groups.links',
+                'default'     => 'gallery',
+                'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.links',
             ],
             'detailPageParam'   => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.detail_page_param',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.detail_page_param_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.detail_page_param',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.detail_page_param_description',
                 'type'        => 'string',
                 'default'     => '{{ :slug }}',
-                'group'       => 'janvince.smallgallery::lang.components.records.properties.groups.links',
+                'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.links',
             ],
             // 'orderBy'   => [
-            //     'title'       => 'janvince.smallgallery::lang.components.records.properties.sort_by',
+            //     'title'       => 'janvince.smallgallery::lang.components.galleries.properties.sort_by',
             //     'type'        => 'dropdown',
             //     'default'     => 'date',
-            //     'group'       => 'janvince.smallgallery::lang.components.records.properties.groups.sort',
+            //     'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.sort',
             // ],
             // 'orderByDirection'   => [
-            //     'title'       => 'janvince.smallgallery::lang.components.records.properties.sort_by_direction',
+            //     'title'       => 'janvince.smallgallery::lang.components.galleries.properties.sort_by_direction',
             //     'type'        => 'dropdown',
             //     'default'     => 'DESC',
-            //     'group'       => 'janvince.smallgallery::lang.components.records.properties.groups.sort',
+            //     'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.sort',
             // ],
         ];
 
@@ -130,19 +130,18 @@ class Records extends ComponentBase
          */
         $this->page['cssClass'] = $this->property('cssClass');
         $this->page['detailPageSlug'] = $this->property('detailPageSlug');
-        $this->page['detailPageParam'] = $this->property('detailPageParam');
-
+        $this->page['detailPageParam'] = $this->propertyName('detailPageParam');
     }
 
     /**
-     * Get records
+     * Get root galleries
      * array @paramOverride Array of parameters names and values to override
      * return @array
      */
-    public function items($paramOverride = []) {
+    public function items($rootOnly = true, $paramOverride = []) {
 
         $records = new Gallery;
-
+        
         /**
          *  Filter category
          */
@@ -205,7 +204,13 @@ class Records extends ComponentBase
              $records->limit($this->property('limit'));
          }
 
-        return $records->get();
+        if($rootOnly) {
+            $rootRecords = $records->getEagerRoot();
+        } else {
+            $rootRecords = $records->get();
+        }
+
+        return $rootRecords;
 
     }
 

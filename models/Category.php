@@ -13,7 +13,6 @@ class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\NestedTree;
-    // use \October\Rain\Database\Traits\Sortable;
 
     public $table = 'janvince_smallgallery_categories';
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
@@ -42,8 +41,8 @@ class Category extends Model
      * @var array Relations
      */
     public $hasMany = [
-        'records' => [
-            'JanVince\SmallGallery\Models\Record'
+        'galleries' => [
+            'JanVince\SmallGallery\Models\Gallery'
         ]
     ];
 

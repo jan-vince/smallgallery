@@ -40,8 +40,8 @@ class Tag extends Model
      * @var array Relations
      */
     public $belongsToMany = [
-        'records' => [
-            'JanVince\SmallGallery\Models\Record',
+        'galleries' => [
+            'JanVince\SmallGallery\Models\Gallery',
             'table' => 'janvince_smallgallery_galleries_tags'
         ]
     ];

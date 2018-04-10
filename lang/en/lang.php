@@ -95,7 +95,13 @@
         'columns' => [
             'allowed_fields' => 'Allowed fields',
             'allowed_fields_comment' => 'Checked fields will be visible in gallery editing form. This list is long so scroll down! <br><em>Some field will be visible after you create a record (they are dependent on gallery\'s ID)!</em>',
+            'main_gallery' => 'Gallery',
+            'parent' => 'Parent gallery',
+            'parent_gallery' => 'Parent gallery',
+            'parent_gallery_empty' => 'No gallery',
+            'parent_comment' => 'You can change hierarchy and order on <a href="'.Backend::url('janvince/smallgallery/galleries/reorder').'">Reorder page</a>',
         ],
+        
         'images_media' => [
             'image' => 'Image',
             'title' => 'Title',
@@ -259,7 +265,7 @@
         ],
 
         'gallery' => [
-            'name' => 'Gallery',
+            'name' => 'Gallery detail',
             'description' => 'Get one specific record',
 
             'properties' => [
@@ -286,7 +292,7 @@
         ],
 
         'category' => [
-            'name' => 'Category',
+            'name' => 'Category detail',
             'description' => 'Get one specific category',
 
             'properties' => [

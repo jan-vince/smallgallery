@@ -1,0 +1,25 @@
+<ul class="categories-box {{ cssClass }}">
+
+    {% for category in records %}
+
+    <li {% if category.slug == __SELF__.property('categorySlug') %}class="active"{% endif %}>
+
+        <h3>{{ category.name }}</h3>
+
+        {% if category.records|length %}
+            
+            <span class="badge">{{ category.records|length }}</span>
+
+        {% endif %}
+
+        {% if category.children|length %}
+
+            {% partial "@categories-list" records = category.children %}
+
+        {% endif %}
+
+    </li>
+    
+    {% endfor %}
+
+</ul>

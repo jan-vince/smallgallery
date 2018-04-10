@@ -1,11 +1,3 @@
-<div class="record-box {{ cssClass }}">
+<h1>Gallery <strong>{{ gallery.name }}</strong></h1>
 
-    {% if __SELF__.recordDetail.preview_image %}
-        <img alt="{{ __SELF__.name }}" src="{{ __SELF__.preview_image.getPath }}" />
-    {% endif %}
-
-    <h3 class="record-box-title">
-        {{ __SELF__.recordDetail.name }}
-    </h3>
-
-</div>
+{% partial "@images-list" images = gallery.images %}

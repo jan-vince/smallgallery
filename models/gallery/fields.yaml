@@ -25,6 +25,20 @@ fields:
 tabs:
     fields:
 
+        parent_gallery:
+            label: 'janvince.smallgallery::lang.galleries.columns.parent_gallery'
+            type: relation
+            span: left
+            emptyOption: 'janvince.smallgallery::lang.galleries.columns.parent_gallery_empty'
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
+        preview_image:
+            label: 'janvince.smallgallery::lang.common.columns.preview_image'
+            type: fileupload
+            mode: image
+            span: right
+            tab: 'janvince.smallgallery::lang.common.tabs.info'
+
         category:
             label: 'janvince.smallgallery::lang.common.columns.category'
             # comment: 'janvince.smallgallery::lang.common.columns.category_comment'
@@ -33,13 +47,6 @@ tabs:
             nameFrom: name
             span: left
             emptyOption: 'janvince.smallgallery::lang.common.fields.empty_option'
-            tab: 'janvince.smallgallery::lang.common.tabs.info'
-
-        preview_image:
-            label: 'janvince.smallgallery::lang.common.columns.preview_image'
-            type: fileupload
-            mode: image
-            span: right
             tab: 'janvince.smallgallery::lang.common.tabs.info'
 
         preview_image_media:

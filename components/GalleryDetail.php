@@ -10,7 +10,7 @@ use JanVince\SmallGallery\Models\Category;
 use JanVince\SmallGallery\Models\Gallery;
 use JanVince\SmallGallery\Models\Settings;
 
-class RecordDetail extends ComponentBase
+class GalleryDetail extends ComponentBase
 {
 
 
@@ -52,8 +52,8 @@ class RecordDetail extends ComponentBase
                 'default'     => true,
             ],
             'throw404'   => [
-                'title'       => 'janvince.smallgallery::lang.components.record.properties.throw404',
-                'description' => 'janvince.smallgallery::lang.components.record.properties.throw404_description',
+                'title'       => 'janvince.smallgallery::lang.components.gallery.properties.throw404',
+                'description' => 'janvince.smallgallery::lang.components.gallery.properties.throw404_description',
                 'type'        => 'checkbox',
                 'default'     => false,
             ],
@@ -64,7 +64,7 @@ class RecordDetail extends ComponentBase
     public function onRun()
     {
 
-        $this->recordDetail = $this->page['galleryDetail'] = $this->getGallery();
+        $this->galleryDetail = $this->page['gallery'] = $this->getGallery();
 
         if( $this->property('gallerySlug') and !$this->galleryDetail ){
             abort(404, 'Gallery not found!');

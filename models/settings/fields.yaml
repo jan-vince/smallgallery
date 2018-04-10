@@ -11,7 +11,7 @@ tabs:
             label: 'janvince.smallgallery::lang.galleries.columns.allowed_fields'
             comment: 'janvince.smallgallery::lang.galleries.columns.allowed_fields_comment'
             commentHtml: true
-            span: left
+            span: full
             type: checkboxlist
             default: true
             tab: 'janvince.smallgallery::lang.common.tabs.fields'

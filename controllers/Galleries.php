@@ -38,6 +38,14 @@ class Galleries extends Controller
 
     }
 
+    public function create_onSaveNew($context = null)
+    {
+        parent::create_onSave($context);
+
+        return Backend::url('janvince/smallrecords/records/create');
+
+    }
+
     public function onDeleteAttachedImages($recordId, $context = ''){
 
         $record = Gallery::where('id', $recordId)->first();

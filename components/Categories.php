@@ -26,21 +26,15 @@ class Categories extends ComponentBase
     {
 
         return [
-            'areaSlug'  => [
-                'title' => 'janvince.smallgallery::lang.components.categories.properties.area',
-                'description' => 'janvince.smallgallery::lang.components.categories.properties.area_description',
-                'type'  => 'dropdown',
-                'default' => null,
-            ],
             'categorySlug'    => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.category',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.category_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.category',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.category_description',
                 'type'        => 'string',
                 'default'     => '{{ :category }}',
             ],
             'activeOnly'      => [
-                'title'       => 'janvince.smallgallery::lang.components.records.properties.active_only',
-                'description' => 'janvince.smallgallery::lang.components.records.properties.active_only_description',
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.active_only',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.active_only_description',
                 'type'        => 'checkbox',
                 'default'     => true,
             ],
@@ -48,7 +42,7 @@ class Categories extends ComponentBase
                 'title'       => 'janvince.smallgallery::lang.components.categories.properties.root_only',
                 'description' => 'janvince.smallgallery::lang.components.categories.properties.root_only_description',
                 'type'        => 'checkbox',
-                'default'     => false,
+                'default'     => true,
             ],
         ];
 
@@ -75,24 +69,7 @@ class Categories extends ComponentBase
      */
     public function items() {
 
-        $categories = Category::with('records');
-
-        /**
-         *  Filter category records by area
-         */
-        if( $this->property('areaSlug') ) {
-
-            $categories->whereHas('records', function ($query) {
-
-                $query->whereHas('area', function ($query2) {
-
-                    $query2->where('slug', '=', $this->property('areaSlug'));
-
-                });
-
-            });
-
-        }
+        $categories = Category::with('galleries');
 
         /**
          *  Filter root only
@@ -108,7 +85,13 @@ class Categories extends ComponentBase
              $categories->isActive();
          }
 
-        return $categories->get();
+         if($this->property('rootOnly')) {
+            $rootCategories = $categories->whereNull('parent_id')->get();
+        } else {
+            $rootCategories = $categories->get();
+        }
+
+        return $rootCategories;
 
     }
 
