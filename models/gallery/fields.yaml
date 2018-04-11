@@ -26,7 +26,7 @@ tabs:
     fields:
 
         parent_gallery:
-            label: 'janvince.smallgallery::lang.galleries.columns.parent_gallery'
+            label: 'janvince.smallgallery::lang.common.columns.parent_gallery'
             type: relation
             span: left
             emptyOption: 'janvince.smallgallery::lang.galleries.columns.parent_gallery_empty'

@@ -5,3 +5,5 @@
     - Added unique check for galleries slug
 1.0.2:
     - Fixed gallery list component
+1.0.3:
+    - Added missing translations

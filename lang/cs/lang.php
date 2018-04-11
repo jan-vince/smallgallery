@@ -58,7 +58,7 @@
             'created_at' => 'Vytvořeno',
             'updated_at' => 'Aktualizováno',
             'sort_order' => 'Vlastní pořadí',
-            'parent_gallery' => 'Parent gallery',
+            'parent_gallery' => 'Nadřazená galerie',
         ],
 
         'fields' => [
@@ -91,6 +91,10 @@
         'columns' => [
             'allowed_fields' => 'Povolené formulářové prvky',
             'allowed_fields_comment' => 'Označené položky budou viditelné ve formuláři při editaci záznamu. Položek je hodně, proto skrolujte dolů.<br><em>Některá pole formuláře budou viditelná až ve chvíli, kdy uložíte záznam (jsou závislá na ID záznamu)!</em>',
+            'parent' => 'Nadřazená galerie',
+            'parent_gallery' => 'Nadřazená galerie',
+            'parent_gallery_empty' => 'Žádná galerie',
+            'parent_comment' => 'Můžete upravit strukturu a pořadí na stránce <a href="'.Backend::url('janvince/smallgallery/galleries/reorder').'">Změnit pořadí</a>',
         ],
 
         'images_media' => [
