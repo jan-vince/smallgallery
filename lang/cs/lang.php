@@ -3,7 +3,7 @@
         'name' => 'Galerie',
         'name_short' => 'Galerie',
         'name_original' => 'Galerie',
-        'description' => 'Jednoduchá foto galerie',
+        'description' => 'Jednoduchá fotogalerie',
     ],
 
     'common' => [
