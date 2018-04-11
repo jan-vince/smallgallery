@@ -3,3 +3,5 @@
     - smallgallery_tables.php
 1.0.1:
     - Added unique check for galleries slug
+1.0.2:
+    - Fixed gallery list component
