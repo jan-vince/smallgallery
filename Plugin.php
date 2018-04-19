@@ -133,8 +133,8 @@ class Plugin extends PluginBase
         return [
             'JanVince\SmallGallery\Components\Galleries' => 'galleries',
             'JanVince\SmallGallery\Components\GalleryDetail' => 'galleryDetail',
-            'JanVince\SmallGallery\Components\Categories' => 'categories',
-            'JanVince\SmallGallery\Components\CategoryDetail' => 'categoryDetail',
+            'JanVince\SmallGallery\Components\Categories' => 'galleryCategories',
+            'JanVince\SmallGallery\Components\CategoryDetail' => 'galleryCategoryDetail',
         ];
     }
 
