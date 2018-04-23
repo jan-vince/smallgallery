@@ -295,20 +295,18 @@
     ],
 
     'permissions' => [
-        'tab_name' => 'Záznamy',
-        'access_areas' => 'Přístup k Seznamům záznamů',
-        'access_area' => '> Přístup k seznamu ',
-        'access_records' => 'Přístup k Záznamům',
-        'access_categories' => 'Přístup ke Kategoriím',
-        'access_attributes' => 'Přístup k Vlastnostem',
-        'access_settings' => 'Přístup k Nastavení pluginu',
-        'access_tags' => 'Přístup ke Štítkům',
+        'tab_name' => 'Galerie',
+        'access_records' => 'Přístup ke galeriím',
+        'access_categories' => 'Přístup ke kategoriím',
+        'access_attributes' => 'Přístup k vlastnostem',
+        'access_settings' => 'Přístup k nastavení pluginu',
+        'access_tags' => 'Přístup ke štítkům',
         'access_denied' => 'Přístup zamítnut',
     ],
 
     'settings' => [
-        'main_section' => 'Nastavení Záznamů',
-        'main_section_comment' => 'Pár předvoleb pro plugin Záznamy',
+        'main_section' => 'Nastavení Galerií',
+        'main_section_comment' => 'Pár předvoleb pro plugin Galerie',
 
         'tabs' => [
             'lists' => 'Seznamy',
@@ -318,20 +316,6 @@
         'fields' => [
             'preview_width' => 'Šířka náhledového obrázku v seznamu',
             'preview_height' => 'Výška náhledového obrázku v seznamu',
-
-            'connections_section_blog' => '(Rainlab) Blog',
-            'connections_section_pages' => '(Rainlab) Statické stránky',
-
-            'allow_records_in_blog_posts' => 'Povolit Záznamy v příspěvcích Blogu',
-            'allow_records_in_blog_posts_comment' => 'Zobrazí seznam záznamů v příspěvku Blogu (musí být nainstalován plugin Rainlab.Blog)',
-            'allow_records_in_blog_posts_area' => 'Zobrazit záznamy ze Seznamu',
-
-            'allow_records_in_pages' => 'Povolit Záznamy ve Statických stránkách',
-            'allow_records_in_pages_comment' => 'Zobrazá seznam záznamů v nastavení Statické stránky (musí být nainstalován plugin Rainlab.Pages)',
-            'allow_records_in_pages_area' => 'Zobrazit záznamy ze Seznamu',
-
         ],
-
     ]
-
 ];

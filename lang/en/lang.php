@@ -141,7 +141,7 @@
         ],
 
         'scoreboard' => [
-            'records_count' => 'Records count',
+            'records_count' => 'Galleries count',
             'records_active' => 'Active',
             'records_hidden' => 'Hidden',
             'records_favourite' => 'Favourite',
@@ -307,10 +307,8 @@
     ],
 
     'permissions' => [
-        'tab_name' => 'Small records permissions',
-        'access_areas' => 'Access Lists',
-        'access_area' => '> Access to list ',
-        'access_records' => 'Access Records',
+        'tab_name' => 'Gallery',
+        'access_galleries' => 'Access Galleries',
         'access_categories' => 'Access Categories',
         'access_attributes' => 'Access Attributes',
         'access_settings' => 'Access Settings',
@@ -319,8 +317,8 @@
     ],
 
     'settings' => [
-        'main_section' => 'Small records settings',
-        'main_section_comment' => 'Some settings for Small records plugin',
+        'main_section' => 'Gallery settings',
+        'main_section_comment' => 'Some settings for Small gallery plugin',
 
         'tabs' => [
             'lists' => 'Lists',
@@ -330,15 +328,6 @@
         'fields' => [
             'preview_width' => 'Image width for Preview image column',
             'preview_height' => 'Image height for Preview image column',
-            'connections_section_blog' => '(Rainlab) Blog',
-            'connections_section_pages' => '(Rainlab) Static pages',
-            'allow_records_in_blog_posts' => 'Allow records in Blog posts',
-            'allow_records_in_blog_posts_comment' => 'Show records list in blog posts (Rainlab.Blog plugin must be installed)',
-            'allow_records_in_blog_posts_area' => 'Show records from List',
-
-            'allow_records_in_pages' => 'Allow records in Static pages',
-            'allow_records_in_pages_comment' => 'Show records list in static page (Rainlab.Pages plugin must be installed)',
-            'allow_records_in_pages_area' => 'Show records from List',
         ],
 
     ]
