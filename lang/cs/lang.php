@@ -296,7 +296,7 @@
 
     'permissions' => [
         'tab_name' => 'Galerie',
-        'access_records' => 'Přístup ke galeriím',
+        'access_galleries' => 'Access Galleries',
         'access_categories' => 'Přístup ke kategoriím',
         'access_attributes' => 'Přístup k vlastnostem',
         'access_settings' => 'Přístup k nastavení pluginu',
