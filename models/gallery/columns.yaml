@@ -84,3 +84,15 @@ columns:
         type: text
         sortable: true
         invisible: true
+
+    created_at:
+        label: 'janvince.smallgallery::lang.common.columns.created_at'
+        type: text
+        sortable: true
+        invisible: true
+
+    updated_at:
+        label: 'janvince.smallgallery::lang.common.columns.updated_at'
+        type: text
+        sortable: true
+        invisible: true

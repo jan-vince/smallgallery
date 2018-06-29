@@ -15,3 +15,5 @@
 1.2.0: 
     - Added new function to galleries component (rootOnly, limit, orderBy)
     - Added settings option to switch list view (tree or flat)
+1.2.1:
+    - Added more columns to Galleries list
