@@ -12,3 +12,6 @@
 1.1.0: !!! Renamed categories components to prevent interaction with SmallRecords plugin. Please update your files to use component's names galleryCategories and galleryCategoryDetail.
 1.1.1:
     - Fixed translations
+1.2.0: 
+    - Added new function to galleries component (rootOnly, limit, orderBy)
+    - Added settings option to switch list view (tree or flat)

@@ -21,7 +21,8 @@ class Galleries extends Controller
     ];
 
     public $listConfig = [
-        'default' => 'config_list.yaml'
+        'default' => 'config_list.yaml',
+        'flat' => 'config_list_flat.yaml',
     ];
 
     public $reorderConfig = 'config_reorder.yaml';

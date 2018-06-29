@@ -242,6 +242,8 @@
                 'tag_description' => 'Tag slug (dynamic like :tag or manually entered)',
                 'active_only' => 'Active records only',
                 'active_only_description' => 'Get only active records (unchecked will get all records)',
+                'root_only' => 'Root records only',
+                'root_only_description' => 'Get only first level records (unchecked will get all records)',
                 'favourite_only' => 'Favourite records only',
                 'favourite_only_description' => 'Get only favourite records (unchecked will get all records)',
                 'detail_page_slug' => 'Detail page slug',
@@ -254,6 +256,7 @@
                 'allow_limit_description' => 'If checked, only required number of records will be returned',
                 'limit' => 'Records count',
                 'limit_description' => 'How many records will be returned',
+                'allow_sorting' => 'Allow sorting',
 
                 'groups' => [
                     'links' => 'Links',
@@ -326,6 +329,8 @@
         ],
 
         'fields' => [
+            'disable_tree' => 'Disable tree view in galleries list',
+            'disable_tree_comment' => 'When enabled, galleries list will be flat list',
             'preview_width' => 'Image width for Preview image column',
             'preview_height' => 'Image height for Preview image column',
         ],

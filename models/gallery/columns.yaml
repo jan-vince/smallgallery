@@ -78,3 +78,9 @@ columns:
         type: attached_images_count
         sortable: true
         invisible: true
+
+    url:
+        label: 'janvince.smallgallery::lang.common.columns.url'
+        type: text
+        sortable: true
+        invisible: true

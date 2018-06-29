@@ -1,1 +1,5 @@
-<?= $this->listRender('default') ?>
+<?php if(JanVince\SmallGallery\Models\Settings::get('galleries_list_disable_tree', 0) ): ?>
+    <?= $this->listRender('flat') ?>
+<?php else : ?>
+    <?= $this->listRender('default') ?>
+<?php endif ?>

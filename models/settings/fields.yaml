@@ -37,6 +37,14 @@ tabs:
                 content_blocks: 'janvince.smallgallery::lang.common.tabs.content_blocks'
 
 
+        galleries_list_disable_tree:
+            label: 'janvince.smallgallery::lang.settings.fields.disable_tree'
+            comment: 'janvince.smallgallery::lang.settings.fields.disable_tree_comment'
+            span: left
+            type: checkbox
+            default: false
+            tab: 'janvince.smallgallery::lang.settings.tabs.lists'
+
         galleries_list_preview_width:
             label: 'janvince.smallgallery::lang.settings.fields.preview_width'
             span: left

@@ -30,20 +30,19 @@ filter: config_filter.yaml
 showSetup: true
 
 # Show list as tree
-showTree: true
-treeExpanded: false
+showTree: false
 
 # Sorting
 showSorting: 1
 
 defaultSort:
-    column: sort_order
+    column: name
     direction: asc
 
 # Toolbar widget configuration
 toolbar:
     # Partial for toolbar buttons
-    buttons: list_toolbar
+    buttons: list_toolbar_flat
 
     # Search widget configuration
     search:

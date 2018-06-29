@@ -233,6 +233,8 @@
                 'tag_description' => 'Záznamy můžete omezit na vybraný štítek (dynamicky parametrem např. ":tag" nebo zadáním ručně)',
                 'active_only' => 'Pouze aktivní záznamy',
                 'active_only_description' => 'Vybere pouze záznamy označené jako aktivní (Pokud není zaškrtnuto, vybere všechny záznamy)',
+                'active_only' => 'Pouze nejvyšší záznamy',
+                'active_only_description' => 'Vybere pouze záznamy, které již nemají žádné nadřazené (Pokud není zaškrtnuto, vybere všechny záznamy)',
                 'favourite_only' => 'Pouze oblíbené záznamy',
                 'favourite_only_description' => 'Vybere pouze záznamy označené jako oblíbené (Pokud není zaškrtnuto, vybere všechny záznamy)',
                 'detail_page_slug' => 'Slug stránky detailu záznamu',
@@ -245,6 +247,7 @@
                 'allow_limit_description' => 'Pokud je zaškrtnuto, vrátí pouze uvedený počet záznamů',
                 'limit' => 'Počet záznamů',
                 'limit_description' => 'Kolik záznamů má být vráceno',
+                'allow_sorting' => 'Povolit řazení',
 
                 'groups' => [
                     'links' => 'Odkazy',
@@ -314,6 +317,8 @@
         ],
 
         'fields' => [
+            'disable_tree' => 'Zakázat zobrazení stromu v seznamu galerií',
+            'disable_tree_comment' => 'Pokud je zaškrtnuto, galerie se zobrazí jako jednoduchý seznam',
             'preview_width' => 'Šířka náhledového obrázku v seznamu',
             'preview_height' => 'Výška náhledového obrázku v seznamu',
         ],

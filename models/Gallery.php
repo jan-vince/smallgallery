@@ -17,6 +17,7 @@ class Gallery extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 	use \October\Rain\Database\Traits\NestedTree;
+	// use \October\Rain\Database\Traits\Sortable;
 
     public $table = 'janvince_smallgallery_galleries';
 

@@ -43,6 +43,12 @@ class Galleries extends ComponentBase
                 'type'        => 'checkbox',
                 'default'     => true,
             ],
+            'rootOnly'      => [
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.root_only',
+                'description' => 'janvince.smallgallery::lang.components.galleries.properties.root_only_description',
+                'type'        => 'checkbox',
+                'default'     => false,
+            ],
             'favouriteOnly'      => [
                 'title'       => 'janvince.smallgallery::lang.components.galleries.properties.favourite_only',
                 'description' => 'janvince.smallgallery::lang.components.galleries.properties.favourite_only_description',
@@ -77,18 +83,24 @@ class Galleries extends ComponentBase
                 'default'     => '{{ :slug }}',
                 'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.links',
             ],
-            // 'orderBy'   => [
-            //     'title'       => 'janvince.smallgallery::lang.components.galleries.properties.sort_by',
-            //     'type'        => 'dropdown',
-            //     'default'     => 'date',
-            //     'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.sort',
-            // ],
-            // 'orderByDirection'   => [
-            //     'title'       => 'janvince.smallgallery::lang.components.galleries.properties.sort_by_direction',
-            //     'type'        => 'dropdown',
-            //     'default'     => 'DESC',
-            //     'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.sort',
-            // ],
+            'allowSorting'   => [
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.allow_sorting',
+                'type'        => 'checkbox',
+                'default'     => false,
+                'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.sort',
+            ],
+            'orderBy'   => [
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.sort_by',
+                'type'        => 'dropdown',
+                'default'     => 'date',
+                'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.sort',
+            ],
+            'orderByDirection'   => [
+                'title'       => 'janvince.smallgallery::lang.components.galleries.properties.sort_by_direction',
+                'type'        => 'dropdown',
+                'default'     => 'DESC',
+                'group'       => 'janvince.smallgallery::lang.components.galleries.properties.groups.sort',
+            ],
         ];
 
     }
@@ -110,7 +122,6 @@ class Galleries extends ComponentBase
             'favourite' => e(trans('janvince.smallgallery::lang.common.columns.favourite')),
             'created_at' => e(trans('janvince.smallgallery::lang.common.columns.created_at')),
             'updated_at' => e(trans('janvince.smallgallery::lang.common.columns.updated_at')),
-            'sort_order' => e(trans('janvince.smallgallery::lang.common.columns.sort_order')),
         ];
     }
 
@@ -138,7 +149,7 @@ class Galleries extends ComponentBase
      * array @paramOverride Array of parameters names and values to override
      * return @array
      */
-    public function items($rootOnly = true, $paramOverride = []) {
+    public function items($rootOnly = false, $paramOverride = []) {
 
         $records = new Gallery;
         
@@ -174,44 +185,49 @@ class Galleries extends ComponentBase
              $records->isFavourite();
          }
 
-        /**
-         *  Order
-         */
-         if( $this->property('orderBy')  ) {
-
-             $allowedColumns = $this->getOrderByOptions();
-
-            if( !empty( $allowedColumns[$this->property('orderBy')] ) ) {
-                $orderByColumn = $this->property('orderBy');
+         if($rootOnly or $this->property('rootOnly')) {
+             $collection = $records->getEagerRoot();
             } else {
-                $orderByColumn = 'date';
+                $collection = $records->get();
             }
-
-            if( in_array( strtoupper($this->property('orderByDirection')), ['ASC', 'DESC'])) {
-                $orderByDirection = strtoupper($this->property('orderByDirection'));
-            } else {
-                $orderByDirection = 'DESC';
-            }
-
-            $records->orderBy($orderByColumn, $orderByDirection);
-
-         }
-
+            
         /**
          *  Limit
          */
-         if( $this->property('allowLimit') and  $this->property('limit') ) {
-             $records->limit($this->property('limit'));
-         }
-
-        if($rootOnly) {
-            $rootRecords = $records->getEagerRoot();
-        } else {
-            $rootRecords = $records->get();
+        if( $this->property('allowLimit') and  $this->property('limit') ) {
+            return $collection->slice(0,$this->property('limit'));
         }
 
-        return $rootRecords;
+        /**
+         *  Order
+         */
+        if( $this->property('allowSorting')  ) {
 
+            $allowedColumns = $this->getOrderByOptions();
+
+           if( !empty( $allowedColumns[$this->property('orderBy')] ) ) {
+               $orderByColumn = $this->property('orderBy');
+           } else {
+               $orderByColumn = 'date';
+           }
+
+           if( in_array( strtoupper($this->property('orderByDirection')), ['ASC', 'DESC'])) {
+               $orderByDirection = strtoupper($this->property('orderByDirection'));
+           } else {
+               $orderByDirection = 'DESC';
+           }
+
+           if($orderByDirection == 'ASC') {
+               $sortedCollection = $collection->sortBy($orderByColumn);
+            } else {
+                $sortedCollection = $collection->sortByDesc($orderByColumn);
+           }
+           
+           return $sortedCollection;
+
+        }
+
+        return $collection;
     }
 
     /**
@@ -230,7 +246,6 @@ class Galleries extends ComponentBase
         });
 
         return $records;
-
     }
 
     /**
