@@ -17,3 +17,5 @@
     - Added settings option to switch list view (tree or flat)
 1.2.1:
     - Added more columns to Galleries list
+1.2.2:
+    - Ordering galleries with accented characters

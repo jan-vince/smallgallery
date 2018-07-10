@@ -218,11 +218,15 @@ class Galleries extends ComponentBase
            }
 
            if($orderByDirection == 'ASC') {
-               $sortedCollection = $collection->sortBy($orderByColumn);
+                $sortedCollection = $collection->sortBy(function($card) use ($orderByColumn) {
+                    return iconv('UTF-8', 'ASCII//TRANSLIT', $card->{$orderByColumn}); }
+                );
             } else {
-                $sortedCollection = $collection->sortByDesc($orderByColumn);
-           }
-           
+                $sortedCollection = $collection->sortByDesc(function($card) use ($orderByColumn) {
+                    return iconv('UTF-8', 'ASCII//TRANSLIT', $card->{$orderByColumn}); }
+                );
+            }
+       
            return $sortedCollection;
 
         }
