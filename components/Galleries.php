@@ -192,13 +192,6 @@ class Galleries extends ComponentBase
             }
             
         /**
-         *  Limit
-         */
-        if( $this->property('allowLimit') and  $this->property('limit') ) {
-            return $collection->slice(0,$this->property('limit'));
-        }
-
-        /**
          *  Order
          */
         if( $this->property('allowSorting')  ) {
@@ -218,20 +211,31 @@ class Galleries extends ComponentBase
            }
 
            if($orderByDirection == 'ASC') {
-                $sortedCollection = $collection->sortBy(function($card) use ($orderByColumn) {
-                    return iconv('UTF-8', 'ASCII//TRANSLIT', $card->{$orderByColumn}); }
-                );
+               $sortedCollection = $collection->sortBy($orderByColumn);
             } else {
-                $sortedCollection = $collection->sortByDesc(function($card) use ($orderByColumn) {
-                    return iconv('UTF-8', 'ASCII//TRANSLIT', $card->{$orderByColumn}); }
-                );
+                $sortedCollection = $collection->sortByDesc($orderByColumn);
+           }
+           
+            /**
+             *  Limit
+             */
+            if( $this->property('allowLimit') and  $this->property('limit') ) {
+                return $sortedCollection->slice(0,$this->property('limit'));
             }
-       
-           return $sortedCollection;
+
+        return $sortedCollection;
 
         }
 
+        /**
+         *  Limit
+         */
+        if( $this->property('allowLimit') and  $this->property('limit') ) {
+            return $collection->slice(0,$this->property('limit'));
+        }
+
         return $collection;
+
     }
 
     /**

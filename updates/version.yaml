@@ -19,3 +19,5 @@
     - Added more columns to Galleries list
 1.2.2:
     - Ordering galleries with accented characters
+1.2.3:
+    - Fixed column type and galleries component limit

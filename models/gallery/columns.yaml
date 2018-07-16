@@ -14,14 +14,14 @@ columns:
 
     preview_image:
         label: 'janvince.smallgallery::lang.common.columns.preview_image'
-        type: record_image_preview
+        type: gallery_image_preview
         width: 30px
         cssClass: text-center
         invisible: true
 
     preview_image_media:
         label: 'janvince.smallgallery::lang.common.columns.preview_image_media'
-        type: record_image_preview_media
+        type: gallery_image_preview_media
         width: 30px
         cssClass: text-center
         invisible: true
