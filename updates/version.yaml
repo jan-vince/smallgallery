@@ -21,3 +21,5 @@
     - Ordering galleries with accented characters
 1.2.3:
     - Fixed column type and galleries component limit
+1.2.4:
+    - Fixed columns type for created_at and updated_at in Galleries list

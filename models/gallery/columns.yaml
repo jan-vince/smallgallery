@@ -87,12 +87,12 @@ columns:
 
     created_at:
         label: 'janvince.smallgallery::lang.common.columns.created_at'
-        type: text
+        type: datetime
         sortable: true
         invisible: true
 
     updated_at:
         label: 'janvince.smallgallery::lang.common.columns.updated_at'
-        type: text
+        type: datetime
         sortable: true
         invisible: true
