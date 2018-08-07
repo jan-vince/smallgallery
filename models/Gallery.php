@@ -187,6 +187,10 @@ class Gallery extends Model
 
         $allowed_fields = Settings::get('allowed_fields');
 
+        if( empty($allowed_fields) ) {
+            return;
+        }
+
         $protected_fields = [
             'id',
             'name',
