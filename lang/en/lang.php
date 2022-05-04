@@ -64,6 +64,9 @@
             'updated_at' => 'Updated',
             'sort_order' => 'Custom order',
             'parent_gallery' => 'Parent gallery',
+            'image' => 'Image',
+            'image_title' => 'Image title',
+            'image_description' => 'Image description',
         ],
 
         'fields' => [

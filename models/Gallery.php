@@ -195,6 +195,9 @@ class Gallery extends Model
             'id',
             'name',
             'slug',
+            'image_title',
+            'image',
+            'image_description',
         ];
 
         foreach( $fields as $fieldKey => $field ) {

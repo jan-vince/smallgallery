@@ -27,3 +27,6 @@
     - Fixed visibility of gallery form fields after first install (default is now to show all fields unless changed in Settings)
 1.3.0:
     - Added German locale (thanks speoman)
+1.3.1:
+    - Fixed repeaters in Gallery forms
+    - Fixed translation

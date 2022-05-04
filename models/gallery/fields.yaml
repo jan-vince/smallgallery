@@ -109,21 +109,19 @@ tabs:
             form:
                 fields:
                     image_title:
-                        label: 'janvince.smallgallery::lang.records.images_media.title'
+                        label: 'janvince.smallgallery::lang.common.columns.image_title'
                         type: text
                         span: left
                     image:
-                        label: 'janvince.smallgallery::lang.records.images_media.image'
+                        label: 'janvince.smallgallery::lang.common.columns.image'
                         type: mediafinder
                         mode: image
                         span: right
                     image_description:
-                        label: 'janvince.smallgallery::lang.records.images_media.description'
+                        label: 'janvince.smallgallery::lang.common.columns.image_description'
                         type: textarea
                         size: medium
                         span: left
-                    image_section:
-                        type: section
 
 
         tags:

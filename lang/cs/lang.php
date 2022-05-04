@@ -59,6 +59,9 @@
             'updated_at' => 'Aktualizováno',
             'sort_order' => 'Vlastní pořadí',
             'parent_gallery' => 'Nadřazená galerie',
+            'image' => 'Obrázek',
+            'image_title' => 'Název obrázku',
+            'image_description' => 'Popisek obrázku',
         ],
 
         'fields' => [
