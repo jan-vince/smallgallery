@@ -151,7 +151,7 @@ class Galleries extends ComponentBase
      */
     public function items($rootOnly = false, $paramOverride = []) {
 
-        $records = new Gallery;
+        $records = Gallery::query();
         
         /**
          *  Filter category
@@ -186,11 +186,11 @@ class Galleries extends ComponentBase
          }
 
          if($rootOnly or $this->property('rootOnly')) {
-             $collection = $records->getEagerRoot();
+             $collection = $records->whereNull('parent_id')->get();
             } else {
                 $collection = $records->get();
             }
-            
+
         /**
          *  Order
          */
