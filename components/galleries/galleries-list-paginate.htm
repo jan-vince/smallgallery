@@ -1,0 +1,29 @@
+<ul class="galleries-list">
+
+    {% for record in records %}
+
+        <li class="gallery {{ cssClass }}">
+
+            {% if record.preview_image %}
+                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image.getPath }}" />
+            {% endif %}
+
+            {% if record.preview_image_media %}
+                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image_media|media }}" />
+            {% endif %}
+
+            <h3>
+                <a href="{{ detailPageSlug|page( { (detailPageParam): record.slug } ) }}">
+                    {{ record.name }} ({{ record.images|length}} images)
+                </a>
+            </h3>
+
+        </li>
+
+    {% endfor %}
+
+    {{ records.render|raw }}
+
+</ul>
+
+

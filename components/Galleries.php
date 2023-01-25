@@ -239,6 +239,86 @@ class Galleries extends ComponentBase
     }
 
     /**
+     * Get root galleries
+     * array @paramOverride Array of parameters names and values to override
+     * return @array
+     */
+    public function itemsPaginate($rootOnly = false, $paramOverride = []) {
+
+        $records = Gallery::query();
+        
+        /**
+         *  Filter category
+         */
+        if( $this->property('categorySlug') ) {
+            $records->whereHas('category', function ($query) {
+                $query->where('slug', '=', $this->property('categorySlug'));
+            });
+        }
+
+        /**
+         *  Filter tag
+         */
+        if( $this->property('tagSlug') ) {
+            $records->whereHas('tags', function ($query) {
+                $query->where('slug', '=', $this->property('tagSlug'));
+            });
+        }
+
+        /**
+         *  Filter active only
+         */
+        if( $this->property('activeOnly') or !empty($paramOverride['activeOnly']) ) {
+            $records->isActive();
+        }
+
+        /**
+         *  Filter favourite only
+         */
+        if( $this->property('favouriteOnly') or !empty($paramOverride['favouriteOnly']) ) {
+            $records->isFavourite();
+        }
+
+        if($rootOnly or $this->property('rootOnly')) 
+        {
+            $records->whereNull('parent_id')->get();
+        }
+
+        /**
+         *  Order
+         */
+        if( $this->property('allowSorting')  ) {
+
+            $allowedColumns = $this->getOrderByOptions();
+
+            if( !empty( $allowedColumns[$this->property('orderBy')] ) ) {
+                $orderByColumn = $this->property('orderBy');
+            } else {
+                $orderByColumn = 'date';
+            }
+
+            if( in_array( strtoupper($this->property('orderByDirection')), ['ASC', 'DESC'])) {
+                $orderByDirection = strtoupper($this->property('orderByDirection'));
+            } else {
+                $orderByDirection = 'DESC';
+            }
+
+            $records->orderBy($orderByColumn, $orderByDirection);
+        
+        }
+
+        /**
+         *  Limit
+         */
+        if( $this->property('allowLimit') and  $this->property('limit') ) {
+            return $records->paginate($this->property('limit'));
+        }
+
+        return $records->get();
+
+    }
+
+    /**
      * Get testimonials from records
      * array @paramOverride Array of parameters names and values to override
      * return @array

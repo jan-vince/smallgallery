@@ -1,3 +1,9 @@
-<h1>Galleries</h1>
+<h1>Galleries collection</h1>
 
 {% partial "@galleries-list"  records = __SELF__.items %}
+
+<hr>
+
+<h1>Galleries paginated</h1>
+
+{% partial "@galleries-list-paginate"  records = __SELF__.itemsPaginate %}
