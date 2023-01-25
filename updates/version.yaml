@@ -33,3 +33,6 @@
     - Fixed translation
 1.3.2:
     - Fixed Galleries component
+1.4.0:
+    - Added itemsPaginate for Galleries component to allow pagination
+    - Updated default galleries component view
